@@ -7,6 +7,13 @@
   </head>
   <body>
     <h1>Create student</h1>
+    @if(count($errors))
+      <ul>
+        @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    @endif
     {!! Form::open([ 'route' => 'students.store', 'method' => 'POST']) !!}
       <div class="form-group">
         {!! Form::label('first_name', 'First name') !!}

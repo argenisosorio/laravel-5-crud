@@ -7,6 +7,13 @@
   </head>
   <body>
     <h1>Update student</h1>
+    @if(count($errors))
+      <ul>
+        @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    @endif
     {!! Form::model($student, ['route' => ['students.update', $student], 'method' => 'PUT']) !!}
       <div class="form-group">
         {!! Form::label('first_name', 'First name') !!}

@@ -31,6 +31,12 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'identification_number' => 'required',
+        ]);
+
         $student = new Student($request->all());
         $student->save();
         return redirect()->route('students.index')->with('info','Student was created!');
