@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create</title>
+    <title>Update</title>
   </head>
   <body>
-    <p>Create student</p>
-    {!! Form::open([ 'route' => 'students.store', 'method' => 'POST']) !!}
+    <p>Update student</p>
+    {!! Form::model($student, ['route' => ['students.update', $student], 'method' => 'PUT']) !!}
       <div class="form-group">
         {!! Form::label('first_name', 'First name') !!}
         {!! Form::text('first_name', null) !!}

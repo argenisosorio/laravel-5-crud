@@ -4,24 +4,56 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
-use App\Http\Requests\StudentRequest;
+//use App\Http\Requests\StudentRequest;
 
 class StudentController extends Controller
 {
-    public function list() {
+    /*
+    |--------------------------------------------------------------------------
+    | LIST
+    |--------------------------------------------------------------------------
+    */
+    public function index()
+    {
         $students = Student::get();
-        return view('students.list')->with('students', $students);
+        return view('students.index')->with('students', $students);
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | CREATE
+    |--------------------------------------------------------------------------
+    */
     public function create()
     {
         return view('students.create');
     }
 
-    public function store(StudentRequest $request)
+    public function store(Request $request)
     {
         $student = new Student($request->all());
         $student->save();
-        return redirect()->route('list');
+        return redirect()->route('students.index');
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | UPDATE
+    |--------------------------------------------------------------------------
+    */
+    public function edit($id)
+    {
+        $student = Student::find($id);
+        return view('students.edit')->with('student',$student);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->first_name = $request->input('first_name');
+        $student->last_name = $request->input('last_name');
+        $student->identification_number = $request->input('identification_number');
+        $student->save();
+        return redirect()->route('students.index')->with('info','Student data was updated!');
     }
 }
