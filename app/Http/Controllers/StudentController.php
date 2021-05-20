@@ -9,6 +9,18 @@ class StudentController extends Controller
 {
     public function list() {
         $students = Student::get();
-        return view('student')->with('students', $students);
+        return view('students.list')->with('students', $students);
+    }
+
+    public function create()
+    {
+        return view('students.create');
+    }
+
+    public function store(Request $request)
+    {
+        $category = new Student($request->all());
+        $student->save();
+        return redirect()->route('list');
     }
 }

@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/list',[StudentController::class, 'list']);
+Route::get('/create',[StudentController::class, 'create']);
