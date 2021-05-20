@@ -21,4 +21,10 @@ $ npm install
 
 $ npm run dev
 
-2- Next, you may navigate to you URL http://127.0.0.1:8000/students
+2- Create and configure database in .env.
+
+$ php artisan key:generate
+
+$ php artisan migrate
+
+3- Next, you may navigate to you URL http://127.0.0.1:8000/students
