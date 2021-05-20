@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create</title>
+    <title>Create student</title>
   </head>
   <body>
-    <p>Create student</p>
+    <h1>Create student</h1>
     {!! Form::open([ 'route' => 'students.store', 'method' => 'POST']) !!}
       <div class="form-group">
         {!! Form::label('first_name', 'First name') !!}
@@ -24,7 +24,7 @@
       </div>
 
       <div class="form-group">
-        {!! Form::submit('Save') !!}
+        {!! Form::submit('SAVE') !!}
       </div>
     {!! Form::close() !!}
   </body>

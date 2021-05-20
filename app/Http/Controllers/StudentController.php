@@ -33,7 +33,7 @@ class StudentController extends Controller
     {
         $student = new Student($request->all());
         $student->save();
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')->with('info','Student was created!');
     }
 
     /*
@@ -55,5 +55,28 @@ class StudentController extends Controller
         $student->identification_number = $request->input('identification_number');
         $student->save();
         return redirect()->route('students.index')->with('info','Student data was updated!');
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | SHOW
+    |--------------------------------------------------------------------------
+    */
+    public function show($id)
+    {
+        $student = Student::find($id);
+        return view('students.show', compact('student'));
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | DELETE
+    |--------------------------------------------------------------------------
+    */
+    public function destroy($id)
+    {
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('students.index')->with('info','Student data was deleted!');
     }
 }

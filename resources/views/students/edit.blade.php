@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Update</title>
+    <title>Update student</title>
   </head>
   <body>
-    <p>Update student</p>
+    <h1>Update student</h1>
     {!! Form::model($student, ['route' => ['students.update', $student], 'method' => 'PUT']) !!}
       <div class="form-group">
         {!! Form::label('first_name', 'First name') !!}
@@ -24,7 +24,7 @@
       </div>
 
       <div class="form-group">
-        {!! Form::submit('Save') !!}
+        {!! Form::submit('SAVE') !!}
       </div>
     {!! Form::close() !!}
   </body>
