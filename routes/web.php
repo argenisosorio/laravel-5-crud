@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/students',[StudentController::class, 'index']);
+Route::get('/list',[StudentController::class, 'list']);
