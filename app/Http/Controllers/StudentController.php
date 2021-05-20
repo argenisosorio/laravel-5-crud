@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Http\Requests\StudentRequest;
 
 class StudentController extends Controller
 {
@@ -17,9 +18,9 @@ class StudentController extends Controller
         return view('students.create');
     }
 
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
-        $category = new Student($request->all());
+        $student = new Student($request->all());
         $student->save();
         return redirect()->route('list');
     }

@@ -17,5 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list',[StudentController::class, 'list']);
+Route::get('/list',[StudentController::class, 'list'])->name('list');
 Route::get('/create',[StudentController::class, 'create']);
+Route::post('','StudentController@store')->name('students.store');

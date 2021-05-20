@@ -7,19 +7,25 @@
   </head>
   <body>
     <p>Create student</p>
-    <form method="POST" action="students.store"> @csrf
+    {!! Form::open([ 'route' => 'students.store', 'method' => 'POST']) !!}
       <div class="form-group">
-      first_name
+        {!! Form::label('first_name', 'First name') !!}
+        {!! Form::text('first_name', null) !!}
       </div>
+
       <div class="form-group">
-        last_name
+        {!! Form::label('last_name', 'Last name') !!}
+        {!! Form::text('last_name', null) !!}
       </div>
+
       <div class="form-group">
-        identification_number
+        {!! Form::label('identification_number', 'Identification number') !!}
+        {!! Form::text('identification_number', null) !!}
       </div>
+
       <div class="form-group">
-        <input type="post" name="">
+        {!! Form::submit('Save') !!}
       </div>
-    </form>
+    {!! Form::close() !!}
   </body>
 </html>
