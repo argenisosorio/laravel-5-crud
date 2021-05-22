@@ -37,6 +37,11 @@
           <a href="{{ route('users.show', $user->id) }}">
             <button>SHOW</button>
           </a>
+          <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Are you sure you want to delete the record? ');">DELETE</button>
+          </form>
         </td>
       </tr>
       @endforeach

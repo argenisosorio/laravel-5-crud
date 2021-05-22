@@ -39,9 +39,10 @@
           <a href="{{ route('students.show', $student->id) }}">
             <button>SHOW</button>
           </a>
-          <form action="{{ route('students.destroy',$student->id) }}" method="POST">@csrf
-              @method('DELETE')
-              <button type="submit">DELETE</button>
+          <form action="{{ route('students.destroy',$student->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Are you sure you want to delete the record? ');">DELETE</button>
           </form>
         </td>
       </tr>

@@ -11,7 +11,7 @@
       Name: {{ $user->name }}
     </p>
     <p>
-      Last name: {{ $user->email }}
+      Email: {{ $user->email }}
     </p>
   </body>
 </html>
