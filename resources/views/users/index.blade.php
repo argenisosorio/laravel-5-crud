@@ -34,6 +34,9 @@
           <a href="{{ route('users.edit', $user->id) }}">
             <button>UPDATE</button>
           </a>
+          <a href="{{ route('users.show', $user->id) }}">
+            <button>SHOW</button>
+          </a>
         </td>
       </tr>
       @endforeach
