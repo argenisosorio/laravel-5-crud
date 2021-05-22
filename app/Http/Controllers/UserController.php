@@ -48,10 +48,17 @@ class UserController extends Controller
     */
     public function edit($id)
     {
+        $user = User::find($id);
+        return view('users.edit')->with('user',$user);
     }
 
     public function update(Request $request, $id)
     {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+        return redirect()->route('users.index')->with('info','Users data was updated!');
     }
 
     /*

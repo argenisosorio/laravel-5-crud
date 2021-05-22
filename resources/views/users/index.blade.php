@@ -31,7 +31,9 @@
         <td class="text-center">{{ $user->name }}</td>
         <td class="text-center">{{ $user->email }}</td>
         <td>
-          xxxx
+          <a href="{{ route('users.edit', $user->id) }}">
+            <button>UPDATE</button>
+          </a>
         </td>
       </tr>
       @endforeach
