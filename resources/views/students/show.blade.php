@@ -16,5 +16,8 @@
     <p>
       Identification number: {{ $student->identification_number }}
     </p>
+    <p>
+      Subject: {{ $student->subject->name }}
+    </p>
   </body>
 </html>

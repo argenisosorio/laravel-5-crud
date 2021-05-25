@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>List of students</title>
+    <title>List of subjects</title>
   </head>
   <body>
     @if(Session::has('info'))
       Message: {{ Session::get('info') }}
     @endif
-    <h1>List of students</h1>
-    <a href="{{ route('students.create') }}">
+    <h1>List of subjects</h1>
+    <a href="{{ route('subjects.create') }}">
       <button>NEW</button>
     </a>
     <br />
@@ -19,29 +19,23 @@
       <thead>
         <tr>
           <th class="text-center">ID</th>
-          <th class="text-center">First name</th>
-          <th class="text-center">Last name</th>
-          <th class="text-center">Identification number</th>
-          <th class="text-center">Subject</th>
+          <th class="text-center">Name</th>
           <th class="text-center">Actions</th>
         </tr>
       </thead>
       <tbody>
-      @foreach ($students as $student)
+      @foreach ($subjects as $subject)
       <tr>
-        <td class="text-center">{{ $student->id }}</td>
-        <td class="text-center">{{ $student->first_name }}</td>
-        <td class="text-center">{{ $student->last_name }}</td>
-        <td class="text-center">{{ $student->identification_number }}</td>
-        <td class="text-center">{{ $student->subject->name }}</td>
+        <td class="text-center">{{ $subject->id }}</td>
+        <td class="text-center">{{ $subject->name }}</td>
         <td>
-          <a href="{{ route('students.edit', $student->id) }}">
+          <a href="{{ route('subjects.edit', $subject->id) }}">
             <button>UPDATE</button>
           </a>
-          <a href="{{ route('students.show', $student->id) }}">
+          <a href="{{ route('subjects.show', $subject->id) }}">
             <button>SHOW</button>
           </a>
-          <form action="{{ route('students.destroy',$student->id) }}" method="POST">
+          <form action="{{ route('subjects.destroy',$subject->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" onclick="return confirm('Are you sure you want to delete the record? ');">DELETE</button>

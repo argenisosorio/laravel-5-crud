@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
-//use App\Http\Requests\StudentRequest;
+use App\Subject;
+
 
 class StudentController extends Controller
 {
@@ -26,7 +27,8 @@ class StudentController extends Controller
     */
     public function create()
     {
-        return view('students.create');
+        $subjects = Subject::orderBy('name', 'ASC')->pluck('name', 'id');
+        return view('students.create')->with('subjects', $subjects);
     }
 
     public function store(Request $request)
@@ -50,7 +52,8 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::find($id);
-        return view('students.edit')->with('student', $student);
+        $subjects = Subject::orderBy('name', 'ASC')->pluck('name', 'id');
+        return view('students.edit')->with('student', $student)->with('subjects', $subjects);
     }
 
     public function update(Request $request, $id)
@@ -59,6 +62,7 @@ class StudentController extends Controller
         $student->first_name = $request->input('first_name');
         $student->last_name = $request->input('last_name');
         $student->identification_number = $request->input('identification_number');
+        $student->subject_id = $request->input('subject_id');
         $student->save();
         return redirect()->route('students.index')->with('info','Student data was updated!');
     }

@@ -31,6 +31,13 @@
       </div>
 
       <div class="form-group">
+        {!! Form::label('subject_id', 'Materia') !!}
+        {!! Form::select('subject_id', $subjects, null) !!}
+      </div>
+
+      <br />
+
+      <div class="form-group">
         {!! Form::submit('SAVE') !!}
       </div>
     {!! Form::close() !!}

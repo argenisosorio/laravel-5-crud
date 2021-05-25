@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $table = "students";
-    protected $fillable = ['first_name','last_name','identification_number'];
+    protected $fillable = ['first_name','last_name','identification_number','subject_id'];
+
+    public function subject()
+    {
+        return $this->belongsTo('App\Subject');
+    }
 }
