@@ -27,6 +27,8 @@ $ php artisan key:generate
 
 $ php artisan migrate
 
+$ php artisan serve
+
 3- Next, you may navigate to you URL http://127.0.0.1:8000/students
 
 ## Branches
