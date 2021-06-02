@@ -49,7 +49,7 @@ class StudentController extends Controller
 
     /*
     |--------------------------------------------------------------------------
-    | UPDATE
+    | EDIT
     |--------------------------------------------------------------------------
     */
     public function edit($id)
@@ -58,6 +58,11 @@ class StudentController extends Controller
         return view('students.edit')->with('student',$student);
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | UPDATE
+    |--------------------------------------------------------------------------
+    */
     public function update(Request $request, $id)
     {
         $student = Student::find($id);
