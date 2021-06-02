@@ -29,6 +29,11 @@ class StudentController extends Controller
         return view('students.create');
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | STORE
+    |--------------------------------------------------------------------------
+    */
     public function store(Request $request)
     {
         $request->validate([
