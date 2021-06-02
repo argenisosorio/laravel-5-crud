@@ -27,6 +27,8 @@ $ php artisan key:generate
 
 $ php artisan migrate
 
+$ php artisan serve
+
 3- Next, you may navigate to you URL http://127.0.0.1:8000/students
 
 ## Branches
@@ -34,3 +36,7 @@ $ php artisan migrate
 -In the users-crud branch we can test a Laravel users crud.
 
 You may navigate to you URL http://127.0.0.1:8000/users
+
+-In the relationships branch we can test a Laravel crud, contains examples of one-to-many with subjects and students.
+
+You may navigate to you URL http://127.0.0.1:8000/subjects and http://127.0.0.1:8000/students
