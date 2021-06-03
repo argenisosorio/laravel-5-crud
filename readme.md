@@ -40,3 +40,7 @@ You may navigate to you URL http://127.0.0.1:8000/users
 -In the relationships branch we can test a Laravel crud, contains examples of one-to-many with subjects and students.
 
 You may navigate to you URL http://127.0.0.1:8000/subjects and http://127.0.0.1:8000/students
+
+-In the blade-example branch we can test examples of the extension of templates with blade.
+
+You may navigate to you URL http://127.0.0.1:8000/students
