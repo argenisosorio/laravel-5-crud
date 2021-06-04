@@ -44,3 +44,7 @@ You may navigate to you URL http://127.0.0.1:8000/subjects and http://127.0.0.1:
 -In the blade-example branch we can test examples of the extension of templates with blade.
 
 You may navigate to you URL http://127.0.0.1:8000/students
+
+-In the bootstrap-integration branch we can test example of a bootstrap integration in the project.
+
+You may navigate to you URL http://127.0.0.1:8000/students
