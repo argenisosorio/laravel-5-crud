@@ -25,7 +25,9 @@
     </div>
 
     <div class="form-group">
-      {!! Form::submit('SAVE') !!}
+      <button type="submit" class="btn btn-outline-success" title="SAVE">
+        <i class="fa fa-save fa-lg ollapsed"></i>
+      </button>
     </div>
   {!! Form::close() !!}
 

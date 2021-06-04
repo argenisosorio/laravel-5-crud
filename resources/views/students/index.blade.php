@@ -7,12 +7,14 @@
   @include('layouts.messages')
 
   <h1>List of students</h1>
-  <a href="{{ route('students.create') }}">
-    <button>NEW</button>
-  </a>
-  <br />
-  <br />
-  <table border="1px" cellspacing="0px" style="width:100%;">
+  <div class="text-right">
+    <a href="{{ route('students.create') }}">
+      <button type="button" class="btn btn-outline-success" title="NEW">
+        <i class="fa fa-plus fa-lg ollapsed"></i>
+      </button>
+    </a>
+  </div>
+  <table class="table table-bordered table-hover mt-3">
     <thead>
       <tr>
         <th class="text-center">ID</th>
@@ -31,14 +33,20 @@
       <td class="text-center">{{ $student->identification_number }}</td>
       <td>
         <a href="{{ route('students.edit', $student->id) }}">
-          <button>UPDATE</button>
+          <button type="button" class="btn btn-outline-primary" title="EDIT">
+            <i class="fa fa-edit fa-lg ollapsed"></i>
+          </button>
         </a>
         <a href="{{ route('students.show', $student->id) }}">
-          <button>SHOW</button>
+          <button type="button" class="btn btn-outline-info" title="DETAIL" title="DETAIL">
+            <i class="fa fa-eye fa-lg ollapsed"></i>
+          </button>
         </a>
         <form action="{{ route('students.destroy',$student->id) }}" method="POST">@csrf
-            @method('DELETE')
-            <button type="submit">DELETE</button>
+          @method('DELETE')
+          <button type="submit" class="btn btn-outline-danger" title="DELETE" onclick="return confirm('Are you sure you want to delete the record? ');">
+            <i class="fa fa-trash fa-lg ollapsed"></i>
+          </button>
         </form>
       </td>
     </tr>
