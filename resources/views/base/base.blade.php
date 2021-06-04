@@ -7,6 +7,8 @@
     <link rel="icon" href="{{ asset ('img/bootstrap-solid.svg') }}">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset ('bootstrap/css/bootstrap.min.css') }}">
+    <!-- Font-awesome CSS -->
+  <link href="{{ asset ('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
   </head>
 <body>
   <div class="container mt-5">
