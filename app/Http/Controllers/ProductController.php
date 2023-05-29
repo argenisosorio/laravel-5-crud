@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Student;
-//use App\Http\Requests\StudentRequest;
+use App\Product;
 
-class StudentController extends Controller
+
+class ProductController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -15,8 +15,8 @@ class StudentController extends Controller
     */
     public function index()
     {
-        $students = Student::get();
-        return view('students.index')->with('students', $students);
+        $products = Product::get();
+        return view('products.index')->with('products', $products);
     }
 
     /*
@@ -26,7 +26,7 @@ class StudentController extends Controller
     */
     public function create()
     {
-        return view('students.create');
+        return view('products.create');
     }
 
     /*
@@ -37,14 +37,12 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'identification_number' => 'required',
+            'name' => 'required',
         ]);
 
-        $student = new Student($request->all());
-        $student->save();
-        return redirect()->route('students.index')->with('info','Student was created!');
+        $product = new Product($request->all());
+        $product->save();
+        return redirect()->route('products.index')->with('info','¡Se creó el producto!');
     }
 
     /*
@@ -54,8 +52,8 @@ class StudentController extends Controller
     */
     public function edit($id)
     {
-        $student = Student::find($id);
-        return view('students.edit')->with('student',$student);
+        $product = Product::find($id);
+        return view('products.edit')->with('product',$product);
     }
 
     /*
@@ -65,12 +63,10 @@ class StudentController extends Controller
     */
     public function update(Request $request, $id)
     {
-        $student = Student::find($id);
-        $student->first_name = $request->input('first_name');
-        $student->last_name = $request->input('last_name');
-        $student->identification_number = $request->input('identification_number');
-        $student->save();
-        return redirect()->route('students.index')->with('info','Student data was updated!');
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->save();
+        return redirect()->route('products.index')->with('info','¡Se actualizaron los datos del producto!');
     }
 
     /*
@@ -80,8 +76,8 @@ class StudentController extends Controller
     */
     public function show($id)
     {
-        $student = Student::find($id);
-        return view('students.show', compact('student'));
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
     }
 
     /*
@@ -91,8 +87,8 @@ class StudentController extends Controller
     */
     public function destroy($id)
     {
-        $student = Student::find($id);
-        $student->delete();
-        return redirect()->route('students.index')->with('info','Student data was deleted!');
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('products.index')->with('info','¡Se eliminaron los datos del producto!');
     }
 }

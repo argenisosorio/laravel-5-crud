@@ -11,10 +11,16 @@
 |
 */
 
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('students','StudentController');
+Route::resource('suppliers','SupplierController');
+Route::resource('products','ProductController');
+Route::resource('brands','BrandController');
+Route::resource('orders','OrderController');

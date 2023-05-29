@@ -11,10 +11,39 @@
   <link href="{{ asset ('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
   </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <i class="fa fa-shopping-cart fa-lg ollapsed" style="color: #FFFFFF;"></i>
+    &nbsp;&nbsp;&nbsp;
+    <a class="navbar-brand" href="/orders">Mi sistema</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Carga inicial
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/brands">Marcas</a>
+            <a class="dropdown-item" href="/suppliers">Proveedores</a>
+            <a class="dropdown-item" href="/products">Productos</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/orders">Órdenes de compra <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="container mt-5">
-    @section('content')
-      Base content...
-    @show
+    <div class="card">
+      <div class="card-body">
+        @section('content')
+        Base content...
+      @show
+      </div>
+    </div>
   </div>
 </body>
 <!-- jQuery
