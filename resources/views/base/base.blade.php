@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('title')</title>
-    <link rel="icon" href="{{ asset ('img/bootstrap-solid.svg') }}">
+    <link rel="icon" href="{{ env('WEB_URL') }}/img/bootstrap-solid.svg">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset ('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ env('WEB_URL') }}/bootstrap/css/bootstrap.min.css">
     <!-- Font-awesome CSS -->
-  <link href="{{ asset ('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,9 +48,9 @@
 </body>
 <!-- jQuery
 ================================================== -->
-<script src="{{ asset ('js/jquery/jquery-3.5.1.slim.min.js') }}" type="text/javascript"></script>
+<script src="{{ env('WEB_URL') }}/js/jquery/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
 <!-- Bootstrap JS
 ================================================== -->
-<script src="{{ asset ('bootstrap/js/popper.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset ('bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ env('WEB_URL') }}/bootstrap/js/popper.min.js" type="text/javascript"></script>
+<script src="{{ env('WEB_URL') }}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </html>
