@@ -8,7 +8,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ env('WEB_URL') }}/bootstrap/css/bootstrap.min.css">
     <!-- Font-awesome CSS -->
-  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ env('WEB_URL') }}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
