@@ -18,7 +18,7 @@
   <table class="table table-bordered table-hover mt-3">
     <thead>
       <tr>
-        <th class="text-center">ID</th>
+        <th class="text-center">N</th>
         <th class="text-center">Nombre</th>
         <th class="text-center">Acciones</th>
       </tr>

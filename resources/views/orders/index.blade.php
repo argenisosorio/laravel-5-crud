@@ -20,7 +20,8 @@
     <table class="table table-bordered table-hover mt-3">
       <thead>
         <tr>
-          <th class="text-center">ID</th>
+          <th class="text-center">N</th>
+          <th class="text-center">Fecha de creación</th>
           <th class="text-center">Proveedor</th>
           <th class="text-center">Producto</th>
           <th class="text-center">Marca</th>
@@ -34,6 +35,13 @@
       @foreach ($orders as $order)
       <tr>
         <td class="text-center">{{ $order->id }}</td>
+        <td class="text-center">
+          <script>
+            var createdDate = new Date("{{ $order->created_at }}");
+            var formattedDate = createdDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            document.write(formattedDate);
+          </script>
+        </td>
         <td class="text-center">{{ $order->supplier->name }}</td>
         <td class="text-center">{{ $order->product->name }}</td>
         <td class="text-center">{{ $order->brand->name }}</td>
